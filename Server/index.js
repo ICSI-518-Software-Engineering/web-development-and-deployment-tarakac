@@ -4,12 +4,13 @@ const cors = require("cors");
 const { db } = require("./configuration/db");
 const { createProduct, updateProducts, deleteProduct, getProducts } = require("./controllers/inventory-items");
 const { imageUpload } = require("./controllers/file-upload");
+const path = require("path");
 
 const app = express();
 const AssignedPortNumber = process.env.LocalPort || 5000;
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(express.static(path.join(__dirname, "dist")));
 db();
 
 //routes
@@ -26,4 +27,6 @@ app.post("/numbers", (req, res) => {
   res.json({ calculatedSum });
 });
 
-app.listen(AssignedPortNumber, () => console.log(`Server running on port ${AssignedPortNumber}`));
+app.listen(AssignedPortNumber, () => console.log(`Server running on port ${AssignedPortNumber}`)
+);
+
