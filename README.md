@@ -8,7 +8,7 @@ Profile website
 Description: i am taraka chennupati currently pursuing my masters in SUNY Albany in computer science department.
 
 Website address :
-http://18.220.144.255:5173/ this is  the website address and If you are running it in local host you can access through this  http://localhost:5173/
+http://18.220.144.255:5173/ this is  the website address and If you are running it in local host you can access through this  http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5173/
 
 What I Have created in my website?
 User page : the main page contains a navigation bar with a home and add numbers and it displays my picture with a description that I have given and you can also edit it and save it.

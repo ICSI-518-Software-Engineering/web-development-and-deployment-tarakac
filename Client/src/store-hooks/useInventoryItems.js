@@ -6,7 +6,7 @@ export const useInventoryItems = create((set) => ({
   setItemsData: (data) => set((state) => ({ itemsData: data })),
   fetchData: async () => {
     try {
-      const response = await axios.get("http://localhost:5000/get-items");
+      const response = await axios.get("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/get-items");
       set((state) => ({ itemsData: response?.data?.items }));
     } catch (error) {
       console.log(error);

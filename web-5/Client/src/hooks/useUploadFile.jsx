@@ -17,7 +17,7 @@ const useFileUploader = () => {
     setFileData(file);
 
     try {
-      const url = await axios.post("http://localhost:5000/upload-image", {
+      const url = await axios.post("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/upload-image", {
         filename: file.name,
       });
 

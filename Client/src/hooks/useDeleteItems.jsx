@@ -11,7 +11,7 @@ const useDeleteItem = (fetchItemsData) => {
       setLoading(true);
       toast.loading("Deleting item...");
 
-      const response = await axios.delete("http://localhost:5000/delete-item", {
+      const response = await axios.delete("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/delete-item", {
         data: { id },
       });
 

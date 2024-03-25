@@ -15,7 +15,7 @@ function NumberCruncher() {
     const calculatedSum = parseFloat(operand1) + parseFloat(operand2);
 
     await axios
-      .post("http://localhost:5000/numbers", { operand1, operand2 })
+      .post("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/numbers", { operand1, operand2 })
       .then((response) => {
         setServerSideTotal(`Server-Calculated Total Sum: ${response.data.calculatedSum}`);
         setClientSideTotal(`Client-Side Total Sum: ${calculatedSum}`);

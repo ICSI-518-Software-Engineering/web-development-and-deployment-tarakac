@@ -31,7 +31,7 @@ const useSaveItem = (fetchData, signedImgUrl, fileData, items) => {
         image: `https://s3.us-east-2.amazonaws.com/s3.deepthi.me/${fileData.name}`,
       };
 
-      await axios.post("http://localhost:5000/create-item", dataToUpload);
+      await axios.post("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/create-item", dataToUpload);
 
       setLoading(false);
       toast.dismiss();

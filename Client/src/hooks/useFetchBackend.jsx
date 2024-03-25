@@ -11,7 +11,7 @@ const useFetchItemsData = () => {
       setLoading(true);
       toast.loading("Fetching items...");
 
-      const response = await axios.get("http://localhost:5000/get-items");
+      const response = await axios.get("http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/get-items");
 
       console.log(response.data);
       setItemsData(response.data.items);
