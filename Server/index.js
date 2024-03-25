@@ -7,7 +7,7 @@ const { imageUpload } = require("./controllers/file-upload");
 const path = require("path");
 
 const app = express();
-const AssignedPortNumber = process.env.LocalPort || 9000;
+const AssignedPortNumber = process.env.LocalPort || 5000;
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "dist")));
