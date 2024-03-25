@@ -8,7 +8,7 @@ const useFetchItems = () => {
   const fetchItems = async () => {
     try {
       setLoading(true);
-      const data = await axios.get("https://api.escuelajs.co/api/v1/products/?categoryId=5");
+      const data = await axios.get("https://api.ec2-3-19-58-71.us-east-2.compute.amazonaws.com.co/api/v1/products/?categoryId=5");
       setItems(data.data);
       setLoading(false);
     } catch (error) {
