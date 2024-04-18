@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 
-EXPOSE 5173
+EXPOSE 5000
 
 # Run the server
 CMD ["node", "index.js"]
