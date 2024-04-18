@@ -34,5 +34,8 @@ app.post("/numbers", (req, res) => {
   const calculatedSum = parseFloat(operand1) + parseFloat(operand2);
   res.json({ calculatedSum });
 });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
 
 app.listen(AssignedPortNumber, () => console.log(`Server running on port ${AssignedPortNumber}`));
