@@ -1,4 +1,6 @@
+import './Login.css'
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -16,12 +18,9 @@ const Login = () => {
       });
 
       if (response.data.token && response.data.user) {
-        // Store token and user details in local storage
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
         console.log('Login successful');
-
-        // Redirect to user-card or desired page
         window.location.href = '/user-card';
       }
     } catch (error) {
@@ -59,6 +58,7 @@ const Login = () => {
           />
         </div>
         <button type="submit">Login</button>
+        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p> {/* Sign Up Link */}
       </form>
     </div>
   );
