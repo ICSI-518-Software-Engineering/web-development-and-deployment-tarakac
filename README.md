@@ -4,7 +4,7 @@ Description: i am taraka chennupati currently pursuing my masters in SUNY Albany
 
 Website address :
 http://ec2-3-19-58-71.us-east-2.compute.amazonaws.com:5000/ this is  ex2 instance website address 
-http://localhost:5173/inventory-management localhost website address
+https://ec2-3-141-166-38.us-east-2.compute.amazonaws.com:5173/inventory-management https://ec2-3-141-166-38.us-east-2.compute.amazonaws.com/ website address
 http://3.19.58.71:5000/inventory-management this is website address
 
 Deployment:

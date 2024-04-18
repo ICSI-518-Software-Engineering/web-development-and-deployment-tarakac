@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/signIn', {
+      const response = await axios.post('https://ec2-3-141-166-38.us-east-2.compute.amazonaws.com:5000/signIn', {
         username,
         password,
       });
