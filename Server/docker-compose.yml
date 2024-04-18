@@ -1,31 +1,35 @@
 version: '3.8'
+
 services:
-  mongodb:
+  mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
       - mongo-data:/data/db
+    restart: unless-stopped
 
   app:
     build: ./
-    ports:
-      - "5000:5000"  # Ensure this matches the port exposed in the Dockerfile
-    depends_on:
-      - mongodb
     environment:
-      MONGO_URI: "https://ec2-3-141-166-38.us-east-2.compute.amazonaws.com/-27017"
-
- 
+      - MONGO_URI=mongodb://mongo:27017/catalog
+    ports:
+      - 5000:5000  
+    depends_on:
+      - mongo
+    restart: unless-stopped
 
   caddy:
-    image: caddy:2
+    image: caddy:latest
+    restart: unless-stopped
     ports:
-      - "80:5000"
+      - 80:80
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-    depends_on:
-      - client
+      - caddy-data:/data
+      - caddy-config:/config
 
 volumes:
-  mongo-data:
+  mongo-data:
+  caddy-data:
+  caddy-config:

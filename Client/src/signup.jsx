@@ -21,6 +21,8 @@ const Signup = () => {
       });
 
       if (response.status === 201) {
+        window.location.href = '/';
+
         alert('Signup successful! Please login to continue.');
       }
     } catch (error) {
