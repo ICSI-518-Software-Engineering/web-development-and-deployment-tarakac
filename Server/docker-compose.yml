@@ -1,35 +1,29 @@
 version: '3.8'
-
 services:
-  mongo:
+  mongodb:
     image: mongo
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
       - mongo-data:/data/db
-    restart: unless-stopped
 
   app:
     build: ./
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/catalog
     ports:
-      - 5000:5000  
+      - "5000:5000"
     depends_on:
-      - mongo
-    restart: unless-stopped
+      - mongodb
+    environment:
+      MONGO_URI: "mongodb://mongodb:27017"
 
   caddy:
-    image: caddy:latest
-    restart: unless-stopped
+    image: caddy:2
     ports:
-      - 80:80
+      - "80:80"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy-data:/data
-      - caddy-config:/config
+    depends_on:
+      - app
 
 volumes:
   mongo-data:
-  caddy-data:
-  caddy-config:
